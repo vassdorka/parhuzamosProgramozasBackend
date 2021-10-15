@@ -24,14 +24,18 @@ namespace restbe.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CarModel>>> GetCarModel()
         {
-            return await _context.CarModel.ToListAsync();
+            return await _context.CarModel
+                .Include(c => c.CarBrand)
+                .ToListAsync();
         }
 
         // GET: api/CarModels/5
         [HttpGet("{id}")]
         public async Task<ActionResult<CarModel>> GetCarModel(int id)
         {
-            var carModel = await _context.CarModel.FindAsync(id);
+            var carModel = await _context.CarModel
+                .Include(c => c.CarBrand)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (carModel == null)
             {

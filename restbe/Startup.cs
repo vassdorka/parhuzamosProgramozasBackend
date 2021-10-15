@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using restbe.Models;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 
 namespace restbe
 {
@@ -28,7 +29,10 @@ namespace restbe
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling =
+                Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
             services.AddDbContext<MainDbContext>(opt =>
                                                opt.UseInMemoryDatabase("MainDbContext"));
