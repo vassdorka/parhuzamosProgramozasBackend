@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using restbe.Models;
+using Microsoft.OpenApi.Models;
 
 namespace restbe
 {
@@ -31,6 +32,11 @@ namespace restbe
 
             services.AddDbContext<MainDbContext>(opt =>
                                                opt.UseInMemoryDatabase("MainDbContext"));
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Cars", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +50,10 @@ namespace restbe
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CarsApi v1"));
+
 
             app.UseAuthorization();
 

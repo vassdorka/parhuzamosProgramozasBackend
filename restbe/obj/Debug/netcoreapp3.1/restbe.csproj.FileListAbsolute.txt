@@ -130,3 +130,8 @@ C:\Users\Balint\source\repos\restbe\restbe\bin\Debug\netcoreapp3.1\runtimes\win\
 C:\Users\Balint\source\repos\restbe\restbe\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Balint\source\repos\restbe\restbe\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\Balint\source\repos\restbe\restbe\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Balint\source\repos\restbe\restbe\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Balint\source\repos\restbe\restbe\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Balint\source\repos\restbe\restbe\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Balint\source\repos\restbe\restbe\obj\Debug\netcoreapp3.1\restbe.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Balint\source\repos\restbe\restbe\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
